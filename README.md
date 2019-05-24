@@ -104,7 +104,7 @@ python train.py --load --model_file saved_models/01/best_model.pt --optim sgd --
 
 ## Related Repo
 
-The paper uses the model DCGCN, for detail architecture please refer to [this repo]([https://github.com/Cartus/DCGCN](https://github.com/Cartus/DCGCN)). Codes are adapted from the repo of the EMNLP18 paper [Graph Convolution over Pruned Dependency Trees Improves Relation Extraction](https://nlp.stanford.edu/pubs/zhang2018graph.pdf).
+The paper uses the model DCGCN, for detail architecture please refer to [this repo](https://github.com/Cartus/DCGCN). Codes are adapted from the repo of the EMNLP18 paper [Graph Convolution over Pruned Dependency Trees Improves Relation Extraction](https://nlp.stanford.edu/pubs/zhang2018graph.pdf).
 
 ## Citation
 
