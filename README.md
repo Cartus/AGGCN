@@ -6,7 +6,7 @@ This paper/code introduces the Attention Guided Graph Convolutional graph convol
 
 See below for an overview of the model architecture:
 
-![AGGCN Architecture](fig/arch.png "AGGCN Architecture")
+![AGGCN Architecture](fig/Arch.png "AGGCN Architecture")
 
   
 
