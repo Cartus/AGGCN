@@ -124,6 +124,9 @@
       <find>test_f1 = 0.6</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -147,6 +150,7 @@
     <option name="width" value="1239" />
     <option name="height" value="1406" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -167,23 +171,7 @@
             <path>
               <item name="AGGCN_TACRED" type="b2602c69:ProjectViewProjectNode" />
               <item name="AGGCN_TACRED" type="462c0819:PsiDirectoryNode" />
-              <item name="dataset" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AGGCN_TACRED" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AGGCN_TACRED" type="462c0819:PsiDirectoryNode" />
-              <item name="dataset" type="462c0819:PsiDirectoryNode" />
-              <item name="tacred" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AGGCN_TACRED" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AGGCN_TACRED" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AGGCN_TACRED" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AGGCN_TACRED" type="462c0819:PsiDirectoryNode" />
-              <item name="saved_models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AGGCN_TACRED" type="b2602c69:ProjectViewProjectNode" />
@@ -287,12 +275,12 @@
       <workItem from="1558272106451" duration="4323000" />
       <workItem from="1558327327950" duration="605000" />
       <workItem from="1558596289337" duration="4457000" />
-      <workItem from="1558682355414" duration="2342000" />
+      <workItem from="1558682355414" duration="2716000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11727000" />
+    <option name="totallyTimeSpent" value="12101000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="83" y="32" width="2477" height="1408" extended-state="6" />
@@ -302,7 +290,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.40702313" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.40702313" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
