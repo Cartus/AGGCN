@@ -146,7 +146,7 @@ class AGGCN(nn.Module):
 
     def forward(self, adj, inputs):
         words, masks, pos, ner, deprel, head, subj_pos, obj_pos, subj_type, obj_type = inputs # unpack
-
+        src_mask = (words != constant.PAD_ID).unsqueeze(-2)
         word_embs = self.emb(words)
         embs = [word_embs]
 
@@ -172,7 +172,7 @@ class AGGCN(nn.Module):
                 outputs = self.layers[i](adj, outputs)
                 layer_list.append(outputs)
             else:
-                attn_tensor = self.attn(outputs, outputs, mask)
+                attn_tensor = self.attn(outputs, outputs, src_mask)
                 attn_adj_list = [attn_adj.squeeze(1) for attn_adj in torch.split(attn_tensor, 1, dim=1)]
                 outputs = self.layers[i](attn_adj_list, outputs)
                 layer_list.append(outputs)
