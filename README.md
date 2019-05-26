@@ -11,13 +11,13 @@ See below for an overview of the model architecture:
 
 ## Requirements
 
-Our model was trained on GPU Titan X of DGX.  
+Our model was trained on GPU Tesla P100-SXM2 of DGX.  
 
 - Python 3 (tested on 3.6.8)
 
 - PyTorch (tested on 0.4.1)
 
-- CUDA (tested on 8.0)
+- CUDA (tested on 9.0)
 
 - tqdm
 
@@ -104,7 +104,7 @@ python train.py --load --model_file saved_models/01/best_model.pt --optim sgd --
 
 ## Related Repo
 
-The paper uses the model DCGCN, for detail architecture please refer to [this repo](https://github.com/Cartus/DCGCN). Codes are adapted from the repo of the EMNLP18 paper [Graph Convolution over Pruned Dependency Trees Improves Relation Extraction](https://nlp.stanford.edu/pubs/zhang2018graph.pdf).
+The paper uses the model DCGCN, for detail architecture please refer to the TACL19 paper [Densely Connected Graph Convolutional Network for Graph-to-Sequence Learning](https://github.com/Cartus/DCGCN). Codes are adapted from the repo of the EMNLP18 paper [Graph Convolution over Pruned Dependency Trees Improves Relation Extraction](https://nlp.stanford.edu/pubs/zhang2018graph.pdf).
 
 ## Citation
 
