@@ -11,7 +11,7 @@ See below for an overview of the model architecture:
 
 ## Requirements
 
-Our model was trained on GPU Tesla P100-SXM2 of DGX.  
+Our model was trained on GPU Tesla P100-SXM2 of Nvidia DGX.  
 
 - Python 3 (tested on 3.6.8)
 
@@ -36,9 +36,7 @@ The code requires that you have access to the TACRED dataset (LDC license requir
 First, download and unzip GloVe vectors:
 
 ```
-
 chmod +x download.sh; ./download.sh
-
 ```
 
   
@@ -46,9 +44,7 @@ chmod +x download.sh; ./download.sh
 Then prepare vocabulary and initial word vectors with:
 
 ```
-
 python3 prepare_vocab.py dataset/tacred dataset/vocab --glove_dir dataset/glove
-
 ```
 
   
@@ -64,9 +60,7 @@ This will write vocabulary and word vectors as a numpy matrix into the dir `data
 To train the AGGCN model, run:
 
 ```
-
 bash train_aggcn.sh 1
-
 ```
 
   
@@ -86,9 +80,7 @@ For details on the use of other parameters, please refer to `train.py`.
 Our pretrained model is saved under the dir saved_models/01. To run evaluation on the test set, run:
 
 ```
-
 python3 eval.py saved_models/01 --dataset test
-
 ```
 
   
