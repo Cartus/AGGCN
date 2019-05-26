@@ -103,7 +103,7 @@ The paper uses the model DCGCN, for detail architecture please refer to the TACL
 ```
 @inproceedings{guo2019aggcn,
  author = {Guo, Zhijiang and Zhang, Yan and Lu, Wei.},
- booktitle = {In Proc. of ACL},
+ booktitle = {Proc. of ACL},
  title = {Attention Guided Graph Convolutional Networks for Relation Extraction},
  year = {2019}
 }
