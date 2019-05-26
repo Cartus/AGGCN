@@ -83,7 +83,7 @@ For details on the use of other parameters, please refer to `train.py`.
 
   
 
-To run evaluation on the test set, run:
+Our pretrained model is saved under the dir saved_models/01. To run evaluation on the test set, run:
 
 ```
 
