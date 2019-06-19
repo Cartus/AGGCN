@@ -1,7 +1,9 @@
 Attention Guided Graph Convolutional Networks for Relation Extraction
 ==========
 
-This paper/code introduces the Attention Guided Graph Convolutional graph convolutional networks[http://www.statnlp.org/wp-content/uploads/2019/06/Attention_Guided_Graph_Convolutional_Networks_for_Relation_Extraction.pdf] over dependency trees for the large scale sentence-level relation extraction task (TACRED).
+This paper/code introduces the Attention Guided Graph Convolutional graph convolutional networks (AGGCNs) over dependency trees for the large scale sentence-level relation extraction task (TACRED).
+
+You can find the paper on [http://www.statnlp.org/wp-content/uploads/2019/06/Attention_Guided_Graph_Convolutional_Networks_for_Relation_Extraction.pdf]
 
 See below for an overview of the model architecture:
 
