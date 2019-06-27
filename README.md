@@ -25,7 +25,7 @@ Our model was trained on GPU Tesla P100-SXM2 of Nvidia DGX.
 
 - unzip, wget (for downloading only)
 
-  
+There is no guarantee that the model is the same as we released and reported if you run the code on different environments (including hardware and software). You can find the the [logs](https://github.com/Cartus/AGGCN_TACRED/blob/master/logs.txt) and the [config](https://github.com/Cartus/AGGCN_TACRED/blob/master/config.json) under the main directory. If you train the model by using the default setting, you will get the exact same output in the logs.txt. 
 
 ## Preparation
 
