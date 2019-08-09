@@ -25,7 +25,7 @@ Our model was trained on GPU Tesla P100-SXM2 of Nvidia DGX.
 
 - unzip, wget (for downloading only)
 
-There is no guarantee that the model is the same as we released and reported if you run the code on different environments (including hardware and software). You can find the the [logs](https://github.com/Cartus/AGGCN_TACRED/blob/master/logs.txt) and the [config](https://github.com/Cartus/AGGCN_TACRED/blob/master/config.json) under the main directory. If you train the model by using the default setting, you will get the exact same output in the logs.txt. We also report the the mean and std of F1 score, the stats is 68.2% +- 0.5%. The random seeds are randomly sampled, here we use 0, 37, 47, 72 and 76.
+There is no guarantee that the model is the same as we released and reported if you run the code on different environments (including hardware and software). You can find the the [logs](https://github.com/Cartus/AGGCN_TACRED/blob/master/logs.txt) and the [config](https://github.com/Cartus/AGGCN_TACRED/blob/master/config.json) under the main directory. If you train the model by using the default setting, you will get the exact same output in the logs.txt. We also report the the mean and std of F1 score, the stats is 68.2% +- 0.5%. The random seeds are 0, 37, 47, 72 and 76.
 
 ## Preparation
 
