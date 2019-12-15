@@ -63,10 +63,10 @@ For details on the use of other parameters, please refer to `train.py`.
 
 ## Evaluation
 
-Our pretrained model is saved under the dir saved_models/01, we use the last checkpoint as the default model. To run evaluation on the test set, run:
+Our pretrained model is saved under the dir saved_models/01. To run evaluation on the test set, run:
 
 ```
-python3 eval.py saved_models/01 --dataset test --model checkpoint_epoch_150.pt
+python3 eval.py saved_models/01 --dataset test
 ```
 
 
