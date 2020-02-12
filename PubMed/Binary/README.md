@@ -1,4 +1,4 @@
-AGGCN for SemEval task 8
+AGGCN for Cross Sentence Binary Task
 ==========
   
 
@@ -32,12 +32,10 @@ chmod +x download.sh; ./download.sh
 Then prepare vocabulary and initial word vectors with:
 
 ```
-python3 prepare_vocab.py dataset/semeval dataset/vocab --glove_dir dataset/glove
+./build_vocab.sh
 ```
 
-  
-
-This will write vocabulary and word vectors as a numpy matrix into the dir `dataset/vocab`.
+This will write vocabulary and word vectors as a numpy matrix into the dir `dataset/bin_mul/0/vocab`. Note that we use 5 fold cross validation, so this operation is required for 5 splits.
 
   
 
@@ -48,17 +46,18 @@ This will write vocabulary and word vectors as a numpy matrix into the dir `data
 To train the AGGCN model, run:
 
 ```
-bash train_aggcn.sh
+./train_script.sh
 ```
 
   
 
-Model checkpoints and logs will be saved to `./saved_models/01`.
-
+Model checkpoints and logs will be saved to `./saved_models`.
   
 
 For details on the use of other parameters, please refer to `train.py`.
 
+
+Note that we use 5 fold cross validation, so 5 models should be trained independently for 5 splits.
   
 
 ## Evaluation
@@ -66,7 +65,7 @@ For details on the use of other parameters, please refer to `train.py`.
 Our pretrained model is saved under the dir saved_models/01. To run evaluation on the test set, run:
 
 ```
-python3 eval.py saved_models/01 --dataset test
+./test.sh
 ```
 
 
