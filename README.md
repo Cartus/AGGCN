@@ -25,16 +25,15 @@ Our model was trained on GPU Tesla P100-SXM2 of Nvidia DGX.
 
 - unzip, wget (for downloading only)
 
-There is no guarantee that the model is the same as we released and reported if you run the code on different environments (including hardware and software). You can find the the [logs](https://github.com/Cartus/AGGCN_TACRED/blob/master/logs.txt) and the [config](https://github.com/Cartus/AGGCN_TACRED/blob/master/config.json) under the main directory. If you train the model by using the default setting, you will get the exact same output in the logs.txt. We also report the the mean and std of F1 score, the stats is 68.2% +- 0.5%. The random seeds are 0, 37, 47, 72 and 76.
+We have released our trained model and training log in this repo. You can find the the [logs](https://github.com/Cartus/AGGCN_TACRED/blob/master/logs.txt) under the main directory and the trained model under the saved_models directory. Our released model achieves 69.0% F1 score as reported in the original ACL paper. Moreover, in our Arxiv version, we also reported the mean and std of F1 score, the stats is 68.2% +- 0.5% based on 5 trained models. The random seeds are 0, 37, 47, 72 and 76.
+
+There is no guarantee that the model is the same as we released and reported if you run the code on different environments (including hardware and software). If you train the model by using the default setting, you will get the exact same output in the logs.txt. 
 
 ## Preparation
-
-  
 
 The code requires that you have access to the TACRED dataset (LDC license required). Once you have the TACRED data, please put the JSON files under the directory `dataset/tacred`.
 
   
-
 First, download and unzip GloVe vectors:
 
 ```
