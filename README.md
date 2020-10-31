@@ -3,7 +3,7 @@ Attention Guided Graph Convolutional Networks for Relation Extraction
 
 This paper/code introduces the Attention Guided Graph Convolutional graph convolutional networks (AGGCNs) over dependency trees for the large scale sentence-level relation extraction task (TACRED).
 
-You can find the paper [here](http://www.statnlp.org/wp-content/uploads/2019/06/Attention_Guided_Graph_Convolutional_Networks_for_Relation_Extraction.pdf)
+You can find the paper [here](https://arxiv.org/pdf/1906.07510.pdf)
 
 See below for an overview of the model architecture:
 
@@ -25,7 +25,7 @@ Our model was trained on GPU Tesla P100-SXM2 of Nvidia DGX.
 
 - unzip, wget (for downloading only)
 
-We have released our trained model and training log in this repo. You can find the the [logs](https://github.com/Cartus/AGGCN_TACRED/blob/master/logs.txt) under the main directory and the trained model under the saved_models directory. Our released model achieves 69.0% F1 score as reported in the original ACL paper. Moreover, in our Arxiv version, we also reported the mean and std of F1 score, the stats is 68.2% +- 0.5% based on 5 trained models. The random seeds are 0, 37, 47, 72 and 76.
+We have released our trained model and training log in this repo. You can find the [logs](https://github.com/Cartus/AGGCN_TACRED/blob/master/logs.txt) under the main directory and the trained model under the saved_models directory. Our released model achieves 69.0% F1 score as reported in the original ACL paper. Moreover, in our Arxiv version, we also reported the mean and std of F1 score, the stats is 68.2% +- 0.5% based on 5 trained models. The random seeds are 0, 37, 47, 72 and 76.
 
 There is no guarantee that the model is the same as we released and reported if you run the code on different environments (including hardware and software). If you train the model by using the default setting, you will get the exact same output in the logs.txt. 
 
