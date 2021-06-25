@@ -31,7 +31,7 @@ There is no guarantee that the model is the same as we released and reported if 
 
 ## Preparation
 
-The code requires that you have access to the TACRED dataset (LDC license required). Once you have the TACRED data, please put the JSON files under the directory `dataset/tacred`.
+The code requires that you have access to the TACRED dataset (LDC license required). More details can be found [here](https://nlp.stanford.edu/projects/tacred/). Once you have the TACRED data, please put the JSON files under the directory `dataset/tacred`.
 
 For Semeval-10 Task 8 and PubMed, we have attached the preprocessed datatset under the directory `dataset/semeval` and `dataset/PubMed`, respectively.
 
