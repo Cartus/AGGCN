@@ -332,27 +332,78 @@ def clones(module, N):
 
 
 class MultiHeadAttention(nn.Module):
+    
 
-    def __init__(self, h, d_model, dropout=0.1):
-        super(MultiHeadAttention, self).__init__()
-        assert d_model % h == 0
 
-        self.d_k = d_model // h
-        self.h = h
-        self.linears = clones(nn.Linear(d_model, d_model), 2)
-        self.dropout = nn.Dropout(p=dropout)
+    def __init__(self, hidden_dims, lambda_):
+        self.lambda_ = lambda_
+        self.n_layers = len(hidden_dims) -1
+        self.W, self.v = self.define_weights(hidden_dims)
+        self.C = {}
 
-    def forward(self, query, key, mask=None):
-        if mask is not None:
-            mask = mask.unsqueeze(1)
 
-        nbatches = query.size(0)
+    def __call__(self, emb_matrix, opt):
 
-        query, key = [l(x).view(nbatches, -1, self.h, self.d_k).transpose(1, 2)
-                             for l, x in zip(self.linears, (query, key))]
-        # query = query.view(nbatches, -1, self.h, self.d_k).transpose(1, 2)
-        # key = key.view(nbatches, -1, self.h, self.d_k).transpose(1, 2)
-        attn = attention(query, key, mask=mask, dropout=self.dropout)
+        # Encoder
+        H = self.opt
+        for layer in xrange(self.n_layers):
+            H = self.__encoder(rmb_matrix, H, layer)
 
-        return attn
+        # Final node representations
+        self.H = H
 
+        # Decoder
+        for layer in range(self.n_layers - 1, -1, -1):
+            H = self.__decoder(H, layer)
+        opt_ = H
+
+        # The reconstruction loss of node features
+        features_loss = tf.sqrt(tf.reduce_sum(tf.reduce_sum(tf.pow(X - X_, 2))))
+
+        
+        return feature_loss
+
+    def __encoder(self, emb_matrix, H, layer):
+        H = tf.matmul(H, self.W[layer])
+        self.C[layer] = self.graph_attention_layer(emb_matrix, H, self.v[layer], layer)
+        return tf.sparse_tensor_dense_matmul(self.C[layer], H)
+
+    def __decoder(self, H, layer):
+        H = tf.matmul(H, self.W[layer], transpose_b=True)
+        return tf.sparse_tensor_dense_matmul(self.C[layer], H)
+
+    def define_weights(self, hidden_dims):
+        W = {}
+        for i in range(self.n_layers):
+            W[i] = tf.get_variable("W%s" % i, shape=(hidden_dims[i], hidden_dims[i+1]))
+
+        Ws_att = {}
+        for i in range(self.n_layers):
+            v = {}
+            v[0] = tf.get_variable("v%s_0" % i, shape=(hidden_dims[i+1], 1))
+            v[1] = tf.get_variable("v%s_1" % i, shape=(hidden_dims[i+1], 1))
+            Ws_att[i] = v
+
+        return W, Ws_att
+
+    def graph_attention_layer(self, A, M, v, layer):
+
+        with tf.variable_scope("layer_%s"% layer):
+            f1 = tf.matmul(M, v[0])
+            f1 = A * f1
+            f2 = tf.matmul(M, v[1])
+            f2 = A * tf.transpose(f2, [1, 0])
+            logits = tf.sparse_add(f1, f2)
+
+            unnormalized_attentions = tf.SparseTensor(indices=logits.indices,
+                                         values=tf.nn.sigmoid(logits.values),
+                                         dense_shape=logits.dense_shape)
+            attentions = tf.sparse_softmax(unnormalized_attentions)
+
+            attentions = tf.SparseTensor(indices=attentions.indices,
+                                         values=attentions.values,
+                                         dense_shape=attentions.dense_shape)
+
+            return attn
+
+    
